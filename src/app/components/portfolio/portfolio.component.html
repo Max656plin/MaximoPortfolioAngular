@@ -1,0 +1,18 @@
+<div class="portfolio-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold mb-3">Mi Portfolio</h1>
+      <p class="lead text-muted">
+        Mis 3 proyectos de los que más orgulloso estoy, con detalles sobre cada uno y enlaces a sus repositorios.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      @for (project of projects; track project) {
+        <div class="col-md-6 col-lg-4">
+          <app-project-card [project]="project"></app-project-card>
+        </div>
+      }
+    </div>
+  </div>
+</div>

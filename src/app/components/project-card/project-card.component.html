@@ -1,0 +1,25 @@
+<div class="card project-card h-100 shadow-sm">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">{{ project.title }}</h5>
+    <p class="card-text flex-grow-1">{{ project.description }}</p>
+
+    <div class="technologies mb-3">
+      @for (tech of project.technologies; track tech) {
+        <span class="badge bg-info text-dark me-2 mb-2">{{ tech }}</span>
+      }
+    </div>
+
+    <div class="card-footer bg-transparent border-top pt-3">
+      @if (project.githubLink) {
+        <a
+          [href]="project.githubLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-sm btn-outline-secondary"
+        >
+          <i class="bi bi-github"></i>Míralo tu mismo en GitHub
+        </a>
+      }
+    </div>
+  </div>
+</div>
