@@ -69,10 +69,6 @@ export interface Project {
 }
 ```
 
-## 5. Capturas de pantalla
-
-
-
 Si tienes dudas o quieres contribuir, puedes abrir un issue o enviar un pull request.
 
 
