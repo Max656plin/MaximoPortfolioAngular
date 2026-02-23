@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from '../../services/contact.service';
@@ -12,13 +12,16 @@ import { ContactForm } from '../../models/contact-form.interface';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  private fb = inject(FormBuilder);
+  public contactService = inject(ContactService);
+
   contactForm!: FormGroup;
   submitted = false;
   successMessage = '';
   errorMessage = '';
   showAlert = false;
 
-  constructor(public contactService: ContactService, private fb: FormBuilder) {}
+  constructor() { }
 
   ngOnInit(): void {
     this.initializeForm();

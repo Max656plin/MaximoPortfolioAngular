@@ -1,52 +1,124 @@
-<div class="hero-section">
-  <div class="container py-5">
-    <div class="row align-items-center">
-      <div class="col-md-6 mb-4 mb-md-0">
-      </div>
-      <div class="col-md-6">
-        <h1 class="display-4 fw-bold mb-3">Bienvenido a Mi Portfolio</h1>
-        <p class="lead text-muted mb-4">
-          Me presento soy Máximo Casado Giner, actual estudiante de desarrollo web con ganas de desarrollar mis propias ideas de manera digital. Soy un apasionado de las tecnologias y la innovación siempre le saco partido a las herramientas de este sector ya sea una IA o un programa que automatiza. Este apartado se irá mejorando en posteriores versiones.
-        </p>
-        <div class="btn-group gap-2">
-          <a routerLink="/portfolio" class="btn btn-primary btn-lg">
-            <i class="bi bi-briefcase"></i> Mis proyectos
-          </a>
-          <a routerLink="/contact" class="btn btn-outline-primary btn-lg">
-            <i class="bi bi-envelope"></i> Contacto
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- =============================================
+     HOME — Layout: Centrado vertical
+     ============================================= -->
 
-<section class="skills-section py-5 bg-body">
+<!-- HERO SECTION: Avatar arriba, texto centrado -->
+<section class="hero-section">
   <div class="container">
-    <h2 class="text-center mb-5 fw-bold text-body">Habilidades y Tecnologías</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="skill-card p-4 rounded text-center bg-body-tertiary shadow">
-          <i class="bi bi-code-square display-4 text-primary mb-3"></i>
-          <h4 class="text-body">Desarrollo de páginas web</h4>
-          <p class="text-body-secondary">Se usar con los conocimientos esperados Angular, TypeScript, HTML5, CSS3, Bootstrap para la creación de webs</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="skill-card p-4 rounded text-center bg-body-tertiary shadow">
-          <i class="bi bi-gear display-4 text-primary mb-3"></i>
-          <h4 class="text-body">Lenguajes de programación aprendidos</h4>
-          <p class="text-body-secondary">Cubriendo principalmente el desarrollo frontend y backend. Los lenguajes y tecnologías clave son HTML, CSS, JavaScript, PHP, Java, Python, SQL y lenguajes de marcas como XML. También herramientas como Bootstrap, JQuery o Node.js. </p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="skill-card p-4 rounded text-center bg-body-tertiary shadow">
-          <i class="bi bi-pencil-square display-4 text-primary mb-3"></i>
-          <h4 class="text-body">Creatividad e imaginación</h4>
-          <p class="text-body-secondary">Se sacarle utilidad a mis ideas y pensamientos para plasmarlos en diseños más que funcionales</p>
-        </div>
+
+    <!-- Avatar circular con anillo giratorio -->
+    <div class="hero-avatar-wrap">
+      <div class="hero-avatar-ring">
+        <div class="hero-avatar-circle">MC</div>
       </div>
     </div>
+
+    <!-- Nombre y rol -->
+    <h1 class="hero-name">Máximo Casado Giner</h1>
+    <p class="hero-role">Desarrollador Web · 2º Año DAW</p>
+
+    <!-- Descripción -->
+    <p class="hero-bio">
+      Estudiante apasionado de desarrollo web con ganas de convertir ideas en experiencias digitales reales.
+      Me encanta la tecnología, la innovación y sacar el máximo partido a cada herramienta disponible.
+    </p>
+
+    <!-- Botones CTA tipo pill -->
+    <div class="hero-cta">
+      <a routerLink="/portfolio" class="btn btn-primary">
+        <i class="bi bi-briefcase me-2"></i>Mis Proyectos
+      </a>
+      <a routerLink="/contact" class="btn btn-outline-primary">
+        <i class="bi bi-envelope me-2"></i>Contacto
+      </a>
+    </div>
+
   </div>
 </section>
 
+<!-- SKILLS SECTION: Cards con borde naranja izquierdo -->
+<section class="skills-section">
+  <div class="container">
+
+    <div class="text-center mb-5 anim-fade-up">
+      <div class="section-divider"></div>
+      <h2 class="section-heading">Habilidades y Tecnologías</h2>
+      <p class="text-muted">Lo que sé hacer y con qué lo hago</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 anim-fade-up-1">
+        <div class="skill-card-custom">
+          <i class="bi bi-code-square skill-icon"></i>
+          <h4>Desarrollo Frontend</h4>
+          <p>Angular, TypeScript, HTML5, CSS3 y Bootstrap para construir interfaces modernas y responsivas.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 anim-fade-up-2">
+        <div class="skill-card-custom">
+          <i class="bi bi-layers skill-icon"></i>
+          <h4>Stack Tecnológico</h4>
+          <p>JavaScript, PHP, Java, Python, SQL, XML, jQuery y Node.js. Cubriendo tanto frontend como backend.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 anim-fade-up-3">
+        <div class="skill-card-custom">
+          <i class="bi bi-lightbulb skill-icon"></i>
+          <h4>Creatividad Aplicada</h4>
+          <p>Sé transformar ideas y pensamientos en diseños funcionales y atractivos. Me apoyo en IA y automatización.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE SECTION: Trayectoria formativa -->
+<section class="timeline-section">
+  <div class="container">
+
+    <div class="row align-items-start">
+      <!-- Título de sección -->
+      <div class="col-lg-4 mb-4 mb-lg-0 anim-fade-up">
+        <div class="section-divider left"></div>
+        <h2 class="section-heading">Mi Trayectoria</h2>
+        <p class="text-muted mt-3">Los pasos que me han traído hasta aquí y los proyectos que han marcado mi camino.</p>
+      </div>
+
+      <!-- Timeline vertical -->
+      <div class="col-lg-8 anim-fade-up-2">
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2022 — 2023 · 1er Año</p>
+            <h5 class="timeline-title">Inicio en Desarrollo Web</h5>
+            <p class="timeline-desc">Primeros proyectos: WikiHammer (página temática sobre Warhammer 40k) y treefx
+              (algoritmo de árboles y ramas). Base en HTML, CSS y JavaScript.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2023 — 2024 · Transición</p>
+            <h5 class="timeline-title">Profundización en Backend y Frameworks</h5>
+            <p class="timeline-desc">Estudio de Java, PHP, SQL y primeras aproximaciones a frameworks modernos. Trabajo
+              en equipo y metodologías ágiles.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2024 — 2025 · 2º Año (Actual)</p>
+            <h5 class="timeline-title">Angular, TypeScript y TFG CIVIS</h5>
+            <p class="timeline-desc">Desarrollo de este portfolio con Angular 17+. Trabajo en CIVIS, aplicación de
+              trámites ciudadanos como proyecto fin de grado en equipo.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

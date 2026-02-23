@@ -1,25 +1,30 @@
-<div class="card project-card h-100 shadow-sm">
-  <div class="card-body d-flex flex-column">
-    <h5 class="card-title">{{ project.title }}</h5>
-    <p class="card-text flex-grow-1">{{ project.description }}</p>
+<div class="project-card-custom">
 
-    <div class="technologies mb-3">
-      @for (tech of project.technologies; track tech) {
-        <span class="badge bg-info text-dark me-2 mb-2">{{ tech }}</span>
-      }
-    </div>
+  <!-- Número de proyecto (decorativo en el fondo) -->
+  <span class="card-project-number">{{ (index + 1).toString().padStart(2, '0') }}</span>
 
-    <div class="card-footer bg-transparent border-top pt-3">
-      @if (project.githubLink) {
-        <a
-          [href]="project.githubLink"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-sm btn-outline-secondary"
-        >
-          <i class="bi bi-github"></i>Míralo tu mismo en GitHub
-        </a>
-      }
-    </div>
+  <!-- Título -->
+  <h5 class="card-project-title">{{ project.title }}</h5>
+
+  <!-- Descripción -->
+  <p class="card-project-desc">{{ project.description }}</p>
+
+  <!-- Tecnologías (badges) -->
+  @if (project.technologies && project.technologies.length > 0) {
+  <div class="card-techs">
+    @for (tech of project.technologies; track tech) {
+    <span class="badge bg-info text-dark">{{ tech }}</span>
+    }
   </div>
+  }
+
+  <!-- Footer con link a GitHub -->
+  @if (project.githubLink) {
+  <div class="card-footer-custom">
+    <a [href]="project.githubLink" target="_blank" rel="noopener noreferrer" class="btn-github">
+      <i class="bi bi-github"></i> Ver en GitHub
+    </a>
+  </div>
+  }
+
 </div>

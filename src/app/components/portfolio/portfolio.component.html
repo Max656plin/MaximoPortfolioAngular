@@ -1,18 +1,24 @@
-<div class="portfolio-section py-5">
+<!-- PORTFOLIO — Grid 2 columnas, tarjetas con número grande de fondo -->
+<section class="portfolio-section">
   <div class="container">
-    <div class="text-center mb-5">
-      <h1 class="display-4 fw-bold mb-3">Mi Portfolio</h1>
-      <p class="lead text-muted">
-        Mis 3 proyectos de los que más orgulloso estoy, con detalles sobre cada uno y enlaces a sus repositorios.
+
+    <!-- Cabecera -->
+    <div class="portfolio-header text-center anim-fade-up">
+      <div class="section-divider"></div>
+      <h1 class="section-heading">Mi Portfolio</h1>
+      <p class="text-muted lead">
+        Los 3 proyectos de los que más orgulloso estoy — con sus detalles y acceso a sus repositorios.
       </p>
     </div>
 
-    <div class="row g-4">
-      @for (project of projects; track project) {
-        <div class="col-md-6 col-lg-4">
-          <app-project-card [project]="project"></app-project-card>
-        </div>
+    <!-- Grid 2 columnas -->
+    <div class="row g-4 justify-content-center">
+      @for (project of projects; track project.id) {
+      <div class="col-md-6 col-lg-5 anim-fade-up-2">
+        <app-project-card [project]="project" [index]="$index"></app-project-card>
+      </div>
       }
     </div>
+
   </div>
-</div>
+</section>

@@ -67,8 +67,10 @@ export class ThemeService {
     const htmlElement = document.documentElement;
     if (theme === Theme.DARK) {
       htmlElement.setAttribute('data-bs-theme', 'dark');
+      htmlElement.classList.add('dark-theme');
     } else {
       htmlElement.setAttribute('data-bs-theme', 'light');
+      htmlElement.classList.remove('dark-theme');
     }
   }
 

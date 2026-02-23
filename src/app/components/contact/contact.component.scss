@@ -1,1 +1,112 @@
+.contact-section {
+    background-color: var(--color-bg);
+    padding: 5rem 0;
+    min-height: 85vh;
+}
 
+/* ---- Info Panel (col izquierda) ---- */
+.contact-info-panel {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border-left: 5px solid var(--color-accent);
+    padding: 2rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 90px;
+}
+
+.contact-info-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-accent-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i {
+        font-size: 1.1rem;
+        color: var(--color-accent);
+    }
+}
+
+.info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.info-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    word-break: break-all;
+
+    &:hover {
+        color: var(--color-accent);
+    }
+}
+
+/* ---- Form Panel (col derecha) ---- */
+.contact-form-panel {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    border-top: 5px solid var(--color-accent);
+}
+
+/* Textarea del formulario */
+.message-textarea {
+    height: 140px !important;
+    resize: vertical;
+}
+
+/* Floating label override */
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+}
+
+.form-floating>label {
+    color: var(--color-text-muted) !important;
+    font-family: var(--font-body) !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .contact-info-panel {
+        position: static;
+        margin-bottom: 0;
+    }
+}

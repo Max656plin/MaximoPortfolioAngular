@@ -1,2 +1,340 @@
-
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+/* ================================================================
+   WARM CREATIVE STUDIO — Variables y estilos globales
+   Portfolio de Máximo Casado Giner
+================================================================ */
+
+/* ---- Variables CSS (Light Theme por defecto) ---- */
+:root {
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Nunito', sans-serif;
+
+    --color-bg: #faf7f4;
+    --color-bg-alt: #f2ede8;
+    --color-surface: #ffffff;
+    --color-text: #1c1917;
+    --color-text-muted: #6c6660;
+    --color-border: #e5ded7;
+
+    --color-accent: #e85d04;
+    --color-accent-dark: #c44f04;
+    --color-accent-light: #fff0e8;
+    --color-secondary: #6d6875;
+
+    --color-footer-bg: #1c1917;
+    /* siempre oscuro independientemente del tema */
+
+    --shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.06);
+    --shadow-md: 0 4px 20px rgba(28, 25, 23, 0.10);
+    --shadow-lg: 0 8px 40px rgba(28, 25, 23, 0.14);
+
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 2rem;
+    --radius-pill: 50px;
+
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Variables CSS (Dark Theme) ---- */
+.dark-theme {
+    --color-bg: #1c1917;
+    --color-bg-alt: #141210;
+    --color-surface: #2a2522;
+    --color-text: #f5f0eb;
+    --color-text-muted: #a09890;
+    --color-border: #3d3530;
+
+    --color-accent: #f97316;
+    --color-accent-dark: #ea6a0a;
+    --color-accent-light: #2d1c0a;
+    --color-secondary: #9d8fa0;
+
+    --color-footer-bg: #0d0b0a;
+    /* aún más oscuro en dark mode */
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- Base global ---- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: var(--transition);
+
+    &:hover {
+        color: var(--color-accent-dark);
+    }
+}
+
+/* ---- Botones Bootstrap — override global ---- */
+.btn-primary {
+    background-color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    color: #fff !important;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border-radius: var(--radius-pill) !important;
+    padding: 0.6rem 1.8rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+
+    &:hover {
+        background-color: var(--color-accent-dark) !important;
+        border-color: var(--color-accent-dark) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+    }
+}
+
+.btn-outline-primary {
+    color: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border-radius: var(--radius-pill) !important;
+    padding: 0.6rem 1.8rem;
+    transition: var(--transition);
+
+    &:hover {
+        background-color: var(--color-accent) !important;
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(232, 93, 4, 0.3);
+    }
+}
+
+/* ---- Badges ---- */
+.badge.bg-info {
+    background-color: var(--color-accent-light) !important;
+    color: var(--color-accent) !important;
+    font-weight: 600;
+    font-size: 0.75rem;
+    border: 1px solid rgba(232, 93, 4, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.3em 0.7em;
+}
+
+/* ---- Textos de Bootstrap ---- */
+.text-muted {
+    color: var(--color-text-muted) !important;
+}
+
+.bg-body {
+    background-color: var(--color-bg) !important;
+}
+
+.bg-body-tertiary {
+    background-color: var(--color-bg-alt) !important;
+}
+
+/* ---- Form controls ---- */
+.form-control,
+.form-select {
+    background-color: var(--color-surface) !important;
+    border-color: var(--color-border) !important;
+    color: var(--color-text) !important;
+    font-family: var(--font-body);
+    border-radius: var(--radius-sm) !important;
+    transition: var(--transition);
+
+    &:focus {
+        border-color: var(--color-accent) !important;
+        box-shadow: 0 0 0 0.2rem rgba(232, 93, 4, 0.2) !important;
+    }
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-floating>label {
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+}
+
+/* ---- Alerts ---- */
+.alert {
+    border-radius: var(--radius-md) !important;
+    border: none;
+    font-family: var(--font-body);
+}
+
+.alert-success {
+    background-color: #ecfdf5 !important;
+    color: #065f46 !important;
+}
+
+.alert-danger {
+    background-color: #fef2f2 !important;
+    color: #991b1b !important;
+}
+
+.dark-theme .alert-success {
+    background-color: #064e3b !important;
+    color: #6ee7b7 !important;
+}
+
+.dark-theme .alert-danger {
+    background-color: #7f1d1d !important;
+    color: #fca5a5 !important;
+}
+
+/* ---- Animaciones globales ---- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---- Clases de animación de entrada ---- */
+.anim-fade-up {
+    animation: fadeInUp 0.7s ease both;
+}
+
+.anim-fade-up-1 {
+    animation: fadeInUp 0.7s 0.1s ease both;
+}
+
+.anim-fade-up-2 {
+    animation: fadeInUp 0.7s 0.2s ease both;
+}
+
+.anim-fade-up-3 {
+    animation: fadeInUp 0.7s 0.3s ease both;
+}
+
+.anim-fade-up-4 {
+    animation: fadeInUp 0.7s 0.4s ease both;
+}
+
+.anim-scale-in {
+    animation: scaleIn 0.6s ease both;
+}
+
+/* ---- Divisor decorativo ---- */
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    margin: 0 auto 1.5rem;
+
+    &.left {
+        margin: 0 0 1.5rem;
+    }
+}
+
+/* ---- Layout helpers ---- */
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.text-accent {
+    color: var(--color-accent) !important;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .btn-primary,
+    .btn-outline-primary {
+        padding: 0.5rem 1.4rem;
+    }
+}

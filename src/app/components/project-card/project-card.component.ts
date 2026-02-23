@@ -11,6 +11,7 @@ import { Project } from '../../models/project.interface';
 })
 export class ProjectCardComponent {
   @Input() project!: Project;
+  @Input() index: number = 0;
   @Output() viewMore = new EventEmitter<Project>();
 
   onViewMore(): void {
