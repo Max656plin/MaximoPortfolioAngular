@@ -68,14 +68,3 @@ Instrucciones: Añade aquí tus capturas del proyecto una vez desplegado.
    npm start
    ```
 4. **Abrir en el navegador**: `http://localhost:4200`
-
----
-
-## 🎮 ¿Buscas un secreto?
-Prueba a pulsar esta secuencia en cualquier parte de la web:  
-`↑ ↑ ↓ ↓ ← → ← → B A`
-
----
-
-**Máximo Casado Giner**  
-📧 mcg0112@alu.medac.es | 🐙 [GitHub](https://github.com/Max656plin)
