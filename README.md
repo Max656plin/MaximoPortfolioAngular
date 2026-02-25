@@ -53,10 +53,11 @@ Buenas prácticas:
 ## 4. Decisiones de diseño en TypeScript
 
 Para modelar los datos y asegurar la robustez del código, se han definido:
-- **Interfaces**: `Project`, `ContactMessage`, `Theme`, `UserPreferences` para tipar correctamente los datos.
-- **Enums**: `Theme` (Light, Dark) para controlar el modo de la aplicación.
-- Se evita el uso de `any` en toda la aplicación, tipando variables, parámetros y retornos de funciones.
-- Manejo de excepciones en operaciones críticas, como acceso a localStorage o transformación de datos.
+- **Interfaces**: `Project`, `ContactForm`, `Theme`, `UserPreferences` para tipar correctamente los datos.
+- **Enums**: `Theme` (Light, Dark) y `ContactSubject` para controlar la lógica y los tipos de la aplicación.
+- **Signals**: Se utilizan Angular Signals para la gestión del estado reactivo (tema, visibilidad de secretos, carga de formularios), lo que mejora el rendimiento y la legibilidad.
+- **Tipado Fuerte**: Se evita el uso de `any` en toda la aplicación, tipando variables, parámetros y retornos de funciones.
+- **Manejo de Excepciones**: Operaciones críticas como el acceso a `localStorage` están envueltas en bloques `try/catch` para evitar fallos catastróficos.
 
 Ejemplo de interface:
 ```typescript

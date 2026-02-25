@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from '../../services/contact.service';
-import { ContactForm } from '../../models/contact-form.interface';
+import { ContactForm, ContactSubject } from '../../models';
 
 @Component({
   selector: 'app-contact',
@@ -21,6 +21,9 @@ export class ContactComponent implements OnInit {
   errorMessage = '';
   showAlert = false;
 
+  // Hacer el enum accesible para la plantilla
+  public contactSubjects = Object.values(ContactSubject);
+
   constructor() { }
 
   ngOnInit(): void {
@@ -34,7 +37,7 @@ export class ContactComponent implements OnInit {
     this.contactForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      subject: ['', [Validators.required, Validators.minLength(5)]],
+      subject: [ContactSubject.GENERAL, [Validators.required]],
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
   }

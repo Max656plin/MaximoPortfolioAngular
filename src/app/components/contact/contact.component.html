@@ -108,15 +108,15 @@
 
             <!-- Asunto -->
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="subject" formControlName="subject"
-                placeholder="Asunto del mensaje"
-                [class.is-invalid]="hasError('subject', 'required') || hasError('subject', 'minlength')" />
+              <select class="form-select" id="subject" formControlName="subject"
+                [class.is-invalid]="hasError('subject', 'required')">
+                @for (subject of contactSubjects; track subject) {
+                <option [value]="subject">{{ subject }}</option>
+                }
+              </select>
               <label for="subject">Asunto <span class="text-danger">*</span></label>
               @if (hasError('subject', 'required')) {
               <div class="invalid-feedback">El asunto es obligatorio.</div>
-              }
-              @if (hasError('subject', 'minlength')) {
-              <div class="invalid-feedback">El asunto debe tener al menos 5 caracteres.</div>
               }
             </div>
 

@@ -8,3 +8,14 @@
   <app-footer></app-footer>
 </div>
 
+<!-- Secret Overlay -->
+@if (showSecret()) {
+<div class="secret-overlay" (click)="closeSecret()">
+  <div class="secret-content">
+    <img src="img/KojimaThink.jpg" alt="Kojimao" class="secret-image">
+    <h2 class="secret-title">Has activado una KojiReferencia</h2>
+    <p class="secret-text">Felicidades Shinji- digo usuario has descubierto el secreto</p>
+    <div class="secret-particles"></div>
+  </div>
+</div>
+}

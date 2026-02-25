@@ -4,7 +4,7 @@
   <span class="card-project-number">{{ (index + 1).toString().padStart(2, '0') }}</span>
 
   <!-- Título -->
-  <h5 class="card-project-title">{{ project.title }}</h5>
+  <h5 class="card-project-title">{{ project.title | uppercase }}</h5>
 
   <!-- Descripción -->
   <p class="card-project-desc">{{ project.description }}</p>
