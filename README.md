@@ -1,76 +1,81 @@
+# 🌟 Portfolio Profesional - Máximo Casado Giner
 
-# Mi Portfolio en Angular
+Este proyecto es un portfolio profesional desarrollado con **Angular** y **Bootstrap 5**, diseñado bajo una estética de "Warm Creative Studio". Ofrece una experiencia de usuario fluida, reactiva y personalizada, cumpliendo con los más altos estándares técnicos y académicos.
 
-Este proyecto es un portfolio profesional desarrollado con Angular y Bootstrap 5. Muestra mis proyectos, habilidades, y permite el contacto directo mediante un formulario. El diseño es completamente responsive y adaptable a modo claro/oscuro.
+---
 
-## 1. Estructura de componentes y rutas
+## 🚀 Características Principales
 
-La aplicación está organizada en varios componentes principales:
-- **Home**: Página de presentación, habilidades y tecnologías.
-- **Portfolio**: Muestra los proyectos en tarjetas reutilizables.
-- **Contact**: Formulario de contacto con validación.
-- **Navbar**: Barra de navegación fija, con cambio de tema y enlaces a las rutas.
-- **Footer**: Pie de página siempre oscuro, con enlaces rápidos y redes sociales.
-- **ProjectCard**: Componente reutilizable para mostrar información de cada proyecto.
+- **Diseño Premium**: Paleta de colores cálida (Naranja Coral y Crema), tipografía curada (Playfair Display y Nunito) y animaciones fluidas.
+- **Arquitectura Standalone**: Todos los componentes son independientes, facilitando el mantenimiento y la escalabilidad.
+- **Gestión de Estado con Signals**: Uso de Angular Signals para una reactividad eficiente en el tema, visibilidad de elementos y formularios.
+- **Persistencia de Datos**: Los ajustes de usuario (como el modo claro/oscuro) se guardan automáticamente en `localStorage`.
+- **Formulario Reactivo**: Validación robusta en tiempo real para una comunicación directa y efectiva.
+- **Huevo de Pascua (Secret Achievement)**: Implementación del legendario **Código Konami** con un overlay secreto de diseño exclusivo.
 
-Las rutas están configuradas en el módulo de enrutamiento (`app-routing.module.ts`):
-- `/` → Home
-- `/portfolio` → Portfolio
-- `/contact` → Contact
+---
 
-La navegación se realiza mediante el uso de `<router-outlet>` en el template principal y `routerLink` en el navbar. Ejemplo:
+## 🛠️ Tecnologías y Herramientas
 
-```html
-<nav>
-	<a routerLink="/">Inicio</a>
-	<a routerLink="/portfolio">Portfolio</a>
-	<a routerLink="/contact">Contacto</a>
-</nav>
-<router-outlet></router-outlet>
-```
+- **Angular (Signals & Standalone)**: Framework principal para la lógica y estructura.
+- **Bootstrap 5**: Integrado para una base responsive y de alta velocidad.
+- **TypeScript Avanzado**: Tipado fuerte, interfaces personalizadas y enums para una lógica de negocio robusta.
+- **SCSS/CSS3**: Estilos personalizados con efectos de **Glassmorphism**, gradientes animados y layouts dinámicos.
 
-## 2. Personalización de Bootstrap
+---
 
-Bootstrap 5.3 está integrado globalmente vía npm (`bootstrap` y `@popperjs/core`). Los estilos se cargan en el archivo `angular.json` y se aplican a toda la app.
+## 📖 Detalles Técnicos
 
-- Los estilos personalizados se encuentran en `src/styles.scss` y en los archivos SCSS de cada componente (por ejemplo, `navbar.component.scss`).
-- No se importa Bootstrap en los SCSS de componentes; solo se usan clases de utilidad de Bootstrap en los HTML.
-- El diseño es responsive y se adapta a móvil, tablet y escritorio gracias a las clases de Bootstrap.
-- Se han sobrescrito estilos de Bootstrap en los SCSS para personalizar el aspecto de algunos componentes, manteniendo la coherencia visual.
+### 1. Estructura de Componentes y Rutas
+La aplicación se divide en módulos funcionales:
+- **Home**: Presentación principal y habilidades.
+- **Portfolio**: Galería de proyectos filtrable/mapeable mediante un componente reutilizable `ProjectCard`.
+- **Contact**: Formulario con validaciones avanzadas.
+- **Servicios Centralizados**: `ThemeService`, `StorageService` y `ContactService` para desacoplar la lógica de los componentes.
 
-## 3. Uso de servicios y almacenamiento web
+### 2. TypeScript de Nivel Académico
+Para garantizar un código limpio y seguro, se han implementado:
+- **Interfaces**: `Project`, `ContactForm`, `UserPreferences` y `Theme`.
+- **Enums**: `Theme` (Light/Dark) y `ContactSubject` (para tipificar los motivos de contacto).
+- **Manejo de Errores**: Uso sistemático de bloques `try/catch` en operaciones críticas de almacenamiento.
 
-La aplicación implementa varios servicios para gestionar datos y preferencias:
-- **ThemeService**: Permite cambiar entre tema claro y oscuro, guardando la preferencia en localStorage. El tema se mantiene al recargar la página.
-- **PortfolioService**: Proporciona la lista de proyectos, simulada o almacenada en localStorage para persistencia.
-- **StorageService**: Abstrae el acceso a localStorage/sessionStorage para guardar datos del usuario.
+### 3. Interatividad con Pipes
+Uso de pipes nativos como `uppercase` para el formateo dinámico de datos en las plantillas, asegurando una presentación coherente.
 
-Buenas prácticas:
-- Manejo de errores con try/catch al leer/escribir en localStorage.
-- No se almacenan datos sensibles ni información privada.
-- Preferencia por métodos tipados y validaciones.
+---
 
-## 4. Decisiones de diseño en TypeScript
+## 📸 Galería de Capturas
 
-Para modelar los datos y asegurar la robustez del código, se han definido:
-- **Interfaces**: `Project`, `ContactForm`, `Theme`, `UserPreferences` para tipar correctamente los datos.
-- **Enums**: `Theme` (Light, Dark) y `ContactSubject` para controlar la lógica y los tipos de la aplicación.
-- **Signals**: Se utilizan Angular Signals para la gestión del estado reactivo (tema, visibilidad de secretos, carga de formularios), lo que mejora el rendimiento y la legibilidad.
-- **Tipado Fuerte**: Se evita el uso de `any` en toda la aplicación, tipando variables, parámetros y retornos de funciones.
-- **Manejo de Excepciones**: Operaciones críticas como el acceso a `localStorage` están envueltas en bloques `try/catch` para evitar fallos catastróficos.
+Instrucciones: Añade aquí tus capturas del proyecto una vez desplegado.
+- [ ] ![Vista Principal](HomeCaptura.png)
+- [ ] ![Sección Portfolio](PortfolioCaptura.png)
+- [ ] ![Formulario Contacto](ContactoCaptura.png)
 
-Ejemplo de interface:
-```typescript
-export interface Project {
-	id: number;
-	title: string;
-	description: string;
-	technologies: string[];
-	imageUrl: string;
-}
-```
+---
 
-Si tienes dudas o quieres contribuir, puedes abrir un issue o enviar un pull request.
+## 📂 Cómo Ejecutar el Proyecto
 
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/Max656plin/MaximoPortfolioAngular.git
+   ```
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+3. **Lanzar el servidor de desarrollo**:
+   ```bash
+   npm start
+   ```
+4. **Abrir en el navegador**: `http://localhost:4200`
 
+---
 
+## 🎮 ¿Buscas un secreto?
+Prueba a pulsar esta secuencia en cualquier parte de la web:  
+`↑ ↑ ↓ ↓ ← → ← → B A`
+
+---
+
+**Máximo Casado Giner**  
+📧 mcg0112@alu.medac.es | 🐙 [GitHub](https://github.com/Max656plin)
